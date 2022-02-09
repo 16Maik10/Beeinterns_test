@@ -1,0 +1,326 @@
+body {
+  background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.0001) 0%,
+      rgba(255, 255, 255, 0.1) 100%
+    ),
+    #2b2c3a;
+}
+
+button {
+  border: none;
+}
+
+.myContainer {
+  max-width: 1440px;
+  margin: 0 auto;
+
+  &_forHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.myLink {
+  text-decoration: none;
+  color: #fff;
+
+  &:hover {
+    color: inherit;
+  }
+}
+
+.wrapper {
+  display: flex;
+
+  &__element {
+    width: 100%;
+  }
+}
+main {
+  height: 2000px;
+}
+.leftbar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  background: rgba(156, 165, 236, 0.04);
+  &__logo {
+    display: block;
+    max-width: 138px;
+    margin: 30px 110px 14px 30px;
+
+    & > h3 {
+      font-family: Jost;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 22.1818px;
+      color: #fff;
+    }
+  }
+
+  &__miniLogos {
+    display: flex;
+    justify-content: space-between;
+    font-family: Jost;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10.7331px;
+    line-height: 16px;
+    color: #fff;
+  }
+
+  &__accordion {
+    border-top: 1px solid rgba(216, 216, 216, 0.1);
+    border-bottom: 1px solid rgba(216, 216, 216, 0.1);
+    padding: 20px 0 15px;
+
+    & .accordion-body {
+      padding: 0;
+    }
+
+    & .accordion-item,
+    button.accordion-button {
+      // background: rgb(49, 50, 67);
+      background: unset;
+      border-radius: 0;
+      font-family: Jost;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 20px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #fff;
+      border: none;
+    }
+
+    & button.accordion-button {
+      padding: 10px 30px;
+
+      &:focus,
+      &:not(.collapsed) {
+        box-shadow: unset;
+      }
+
+      &::after {
+        background-image: url(../img/leftbar/arrow.svg);
+        width: 10px;
+        height: 6px;
+        background-size: unset;
+      }
+    }
+  }
+}
+
+.lections {
+  &__item {
+    display: block;
+  }
+
+  &__link {
+    display: block;
+    position: relative;
+    padding: 15px 90px;
+    font-family: Jost;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 10px;
+    opacity: 0.5;
+    transition: opacity 0.2s, background-color 0.2s;
+
+    &:hover {
+      opacity: 1;
+      background-color: #353747;
+    }
+
+    &::before {
+      content: "";
+      width: 18px;
+      height: 18px;
+      background-repeat: no-repeat;
+      display: block;
+      position: absolute;
+    }
+
+    &_htmlCss::before {
+      background-image: url(../img/leftbar/lections/html_css.svg);
+      left: 50px;
+      top: 11px;
+    }
+
+    &_git::before {
+      background-image: url(../img/leftbar/lections/git.svg);
+      left: 53px;
+      top: 11px;
+    }
+
+    &_js::before {
+      background-image: url(../img/leftbar/lections/js.svg);
+      left: 52px;
+      top: 11px;
+    }
+
+    &_react::before {
+      background-image: url(../img/leftbar/lections/react.svg);
+      left: 53px;
+      top: 11px;
+    }
+
+    &_angular::before {
+      background-image: url(../img/leftbar/lections/angular.svg);
+      left: 51px;
+      top: 11px;
+    }
+
+    &_data::before {
+      background-image: url(../img/leftbar/lections/data.svg);
+      left: 51px;
+      top: 11px;
+    }
+
+    &_active {
+      opacity: 1;
+      box-shadow: inset 9px 0px 10px -12px #6f6eff;
+      background-color: #353747;
+    }
+  }
+}
+
+.navMenu {
+  background-color: rgba(156, 165, 236, 0.04);
+  width: 280px;
+  height: 810px;
+}
+.header {
+  border-bottom: 1px solid rgba(216, 216, 216, 0.1);
+  padding: 0 45px;
+  position: sticky;
+  top: 0;
+
+  &__logo {
+  }
+
+  &__nav {
+    display: flex;
+    list-style-type: none;
+    width: 245px;
+    justify-content: space-between;
+  }
+
+  &__navItem:last-of-type {
+    border-right: 1px solid rgba(216, 216, 216, 0.6);
+    padding-right: 28px;
+  }
+
+  &__navLink {
+    font-family: Jost;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 10px;
+    color: #fff;
+    opacity: 0.6;
+  }
+}
+.account {
+  display: flex;
+
+  &__progressValue {
+    font-family: Jost;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 10px;
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.06);
+    border-radius: 5px;
+    padding: 7px 10px;
+    margin-right: 15px;
+    &_hours {
+      font-family: Jost;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 11px;
+      line-height: 10px;
+      opacity: 0.6;
+      margin-left: 4px;
+    }
+
+    &_withIcon {
+      border-radius: 5px;
+      padding: 3px 9px 3px 3px;
+      display: flex;
+      //width: 103px;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}
+
+.buttonGroup {
+  display: flex;
+  align-items: center;
+}
+.accountInfo {
+  display: flex;
+  padding: 14px 0;
+  &__photo {
+  }
+
+  &__online {
+    padding: 8px 15px;
+  }
+
+  &__status {
+    display: flex;
+    margin: 9px 5px;
+    font-family: Jost;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 10px;
+    /* identical to box height, or 77% */
+
+    color: #24cb8d;
+
+    & > img {
+      margin-right: 5px;
+    }
+  }
+
+  &__name {
+    font-family: Jost;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 10px;
+    color: #fff;
+  }
+
+  &__level {
+    background: linear-gradient(90deg, #6b69f9 0%, #6f6eff 100%);
+    border-radius: 4px;
+    align-self: start;
+    margin-top: 8px;
+    font-family: Jost;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 11px;
+    line-height: 10px;
+    color: #fff;
+    padding: 2px 11px 2px 8px;
+  }
+}
+
+.redLightning {
+  background: #ff4738;
+  box-shadow: 0px 0px 12px rgba(255, 71, 56, 0.5);
+  border-radius: 4px;
+  width: 18px;
+  height: 18px;
+  padding: 3px 6px;
+  margin-right: 10px;
+}
