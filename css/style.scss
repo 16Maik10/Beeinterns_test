@@ -5,6 +5,7 @@ body {
       rgba(255, 255, 255, 0.1) 100%
     ),
     #2b2c3a;
+  //background-color: #2b2c3a;
 }
 
 button {
@@ -24,10 +25,25 @@ button {
 
 .myLink {
   text-decoration: none;
-  color: #fff;
 
   &:hover {
     color: inherit;
+  }
+}
+
+.grayLink14 {
+  font-family: Jost;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 10px;
+  color: #fff;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 1;
+    color: #fff;
   }
 }
 
@@ -42,6 +58,9 @@ main {
   height: 2000px;
 }
 .leftbar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   position: sticky;
   top: 0;
   height: 100vh;
@@ -123,12 +142,6 @@ main {
     display: block;
     position: relative;
     padding: 15px 90px;
-    font-family: Jost;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 10px;
-    opacity: 0.5;
     transition: opacity 0.2s, background-color 0.2s;
 
     &:hover {
@@ -216,12 +229,6 @@ main {
   }
 
   &__navLink {
-    font-family: Jost;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 10px;
-    color: #fff;
     opacity: 0.6;
   }
 }
@@ -323,4 +330,36 @@ main {
   height: 18px;
   padding: 3px 6px;
   margin-right: 10px;
+}
+
+.form-switch {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  margin-bottom: 30px;
+  & .form-check-label {
+    cursor: pointer;
+  }
+  & .form-check-input {
+    width: 42px;
+    height: 22px;
+    float: unset;
+    cursor: pointer;
+  }
+  & .form-check-input,
+  & .form-check-input:focus {
+    background-image: url(../img/leftbar/checkbox_disabled.svg);
+    background-position: 3px;
+    background-size: 16px;
+    background-color: unset;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: unset;
+  }
+
+  & .form-check-input:checked {
+    background-position: 21px;
+    background-image: url(../img/leftbar/checkbox.svg);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+  }
 }

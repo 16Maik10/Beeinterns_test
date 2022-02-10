@@ -25,11 +25,27 @@ button {
 
 .myLink {
   text-decoration: none;
-  color: #fff;
 }
 
 .myLink:hover {
   color: inherit;
+}
+
+.grayLink14 {
+  font-family: Jost;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 10px;
+  color: #fff;
+  opacity: 0.5;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+
+.grayLink14:hover {
+  opacity: 1;
+  color: #fff;
 }
 
 .wrapper {
@@ -47,6 +63,16 @@ main {
 }
 
 .leftbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
@@ -132,12 +158,6 @@ main {
   display: block;
   position: relative;
   padding: 15px 90px;
-  font-family: Jost;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 10px;
-  opacity: 0.5;
   -webkit-transition: opacity 0.2s, background-color 0.2s;
   transition: opacity 0.2s, background-color 0.2s;
 }
@@ -230,12 +250,6 @@ main {
 }
 
 .header__navLink {
-  font-family: Jost;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 10px;
-  color: #fff;
   opacity: 0.6;
 }
 
@@ -355,5 +369,47 @@ main {
   height: 18px;
   padding: 3px 6px;
   margin-right: 10px;
+}
+
+.form-switch {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 30px;
+  margin-bottom: 30px;
+}
+
+.form-switch .form-check-label {
+  cursor: pointer;
+}
+
+.form-switch .form-check-input {
+  width: 42px;
+  height: 22px;
+  float: unset;
+  cursor: pointer;
+}
+
+.form-switch .form-check-input,
+.form-switch .form-check-input:focus {
+  background-image: url(../img/leftbar/checkbox_disabled.svg);
+  background-position: 3px;
+  background-size: 16px;
+  background-color: unset;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  -webkit-box-shadow: unset;
+          box-shadow: unset;
+}
+
+.form-switch .form-check-input:checked {
+  background-position: 21px;
+  background-image: url(../img/leftbar/checkbox.svg);
+  border: 1px solid rgba(255, 255, 255, 0.4);
 }
 /*# sourceMappingURL=style.css.map */
