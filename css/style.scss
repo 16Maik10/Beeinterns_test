@@ -1,11 +1,5 @@
 body {
-  background: linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.0001) 0%,
-      rgba(255, 255, 255, 0.1) 100%
-    ),
-    #2b2c3a;
-  //background-color: #2b2c3a;
+  background-color: #2b2c3a;
 }
 
 button {
@@ -31,7 +25,7 @@ button {
   }
 }
 
-.grayLink14 {
+.grayCustomText {
   font-family: Jost;
   font-style: normal;
   font-weight: normal;
@@ -39,24 +33,44 @@ button {
   line-height: 10px;
   color: #fff;
   opacity: 0.5;
-  transition: opacity 0.2s;
+}
+.purpleButton {
+  font-family: Jost;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 17px;
+  color: #fff;
+  background: linear-gradient(90deg, #6b69f9 0%, #6f6eff 100%);
+  border-radius: 4px;
+}
+.sliderMove {
+  padding: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+  margin-left: 5px;
+  background-color: unset;
+  background-image: url(../img/lessons/left_arrow.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: box-shadow 0.2s;
 
   &:hover {
-    opacity: 1;
-    color: #fff;
+    box-shadow: 0px 0px 5px 1px rgba(255, 255, 255, 0.62);
+  }
+
+  &:last-of-type {
+    background-image: url(../img/lessons/right_arrow.svg);
   }
 }
-
 .wrapper {
   display: flex;
 
   &__element {
-    width: 100%;
+    width: calc(100vw - 278px);
   }
 }
-main {
-  height: 2000px;
-}
+
 .leftbar {
   display: flex;
   flex-direction: column;
@@ -101,7 +115,6 @@ main {
 
     & .accordion-item,
     button.accordion-button {
-      // background: rgb(49, 50, 67);
       background: unset;
       border-radius: 0;
       font-family: Jost;
@@ -117,6 +130,13 @@ main {
 
     & button.accordion-button {
       padding: 10px 30px;
+      transition: opacity 0.1s, background-color 0.1s;
+
+      &:hover {
+        opacity: 1;
+        color: #fff;
+        background-color: #353747;
+      }
 
       &:focus,
       &:not(.collapsed) {
@@ -142,10 +162,11 @@ main {
     display: block;
     position: relative;
     padding: 15px 90px;
-    transition: opacity 0.2s, background-color 0.2s;
+    transition: opacity 0.1s, background-color 0.1s;
 
     &:hover {
       opacity: 1;
+      color: #fff;
       background-color: #353747;
     }
 
@@ -208,13 +229,12 @@ main {
   height: 810px;
 }
 .header {
+  background-color: #2b2c3a;
   border-bottom: 1px solid rgba(216, 216, 216, 0.1);
   padding: 0 45px;
   position: sticky;
   top: 0;
-
-  &__logo {
-  }
+  z-index: 5;
 
   &__nav {
     display: flex;
@@ -224,12 +244,17 @@ main {
   }
 
   &__navItem:last-of-type {
-    border-right: 1px solid rgba(216, 216, 216, 0.6);
+    border-right: 1px solid rgba(216, 216, 216, 0.1);
     padding-right: 28px;
   }
 
   &__navLink {
     opacity: 0.6;
+    transition: opacity 0.1s, color 0.1s;
+    &:hover {
+      opacity: 1;
+      color: #fff;
+    }
   }
 }
 .account {
@@ -246,6 +271,7 @@ main {
     border-radius: 5px;
     padding: 7px 10px;
     margin-right: 15px;
+    transition: box-shadow 0.2s;
     &_hours {
       font-family: Jost;
       font-style: normal;
@@ -260,9 +286,12 @@ main {
       border-radius: 5px;
       padding: 3px 9px 3px 3px;
       display: flex;
-      //width: 103px;
       justify-content: space-between;
       align-items: center;
+    }
+
+    &:hover {
+      box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.4);
     }
   }
 }
@@ -274,8 +303,6 @@ main {
 .accountInfo {
   display: flex;
   padding: 14px 0;
-  &__photo {
-  }
 
   &__online {
     padding: 8px 15px;
@@ -289,8 +316,6 @@ main {
     font-weight: 600;
     font-size: 13px;
     line-height: 10px;
-    /* identical to box height, or 77% */
-
     color: #24cb8d;
 
     & > img {
@@ -334,12 +359,18 @@ main {
 
 .form-switch {
   display: flex;
+  flex-direction: row-reverse;
   align-items: center;
   justify-content: space-between;
   padding: 0 30px;
   margin-bottom: 30px;
   & .form-check-label {
     cursor: pointer;
+    transition: opacity 0.1s;
+
+    &:hover {
+      opacity: 1;
+    }
   }
   & .form-check-input {
     width: 42px;
@@ -351,15 +382,140 @@ main {
   & .form-check-input:focus {
     background-image: url(../img/leftbar/checkbox_disabled.svg);
     background-position: 3px;
-    background-size: 16px;
+    background-size: 15px;
     background-color: unset;
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: unset;
   }
 
+  & .form-check-input:checked,
+  .form-check-input:hover {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+  }
+
+  & .form-check-input:hover + .form-check-label {
+    opacity: 1;
+  }
+
   & .form-check-input:checked {
     background-position: 21px;
     background-image: url(../img/leftbar/checkbox.svg);
-    border: 1px solid rgba(255, 255, 255, 0.4);
+  }
+}
+
+.course {
+  padding: 3% 4% 0;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+  }
+  &__desc {
+    font-family: Jost;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 18px;
+    color: #fff;
+    &_lvl {
+      font-family: Jost;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 11px;
+      line-height: 16px;
+      text-transform: uppercase;
+      color: #fff;
+      opacity: 0.4;
+      margin-bottom: 7px;
+    }
+  }
+
+  &__navigation {
+    display: flex;
+    align-items: center;
+  }
+
+  &__lections {
+    padding: 7px 12px;
+    margin-right: 5px;
+    transition: box-shadow 0.2s;
+    &:hover {
+      box-shadow: 0px 0px 10px 5px rgba(107, 105, 249, 0.62);
+      color: #fff;
+    }
+  }
+}
+.courseContent {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.lectionCard {
+  background-color: rgba(255, 255, 255, 0.04);
+  width: fit-content;
+  border-radius: 6px;
+  position: relative;
+  margin-bottom: 40px;
+
+  &__type {
+    padding: 5px;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+  }
+  &__desc {
+    padding: 15px;
+  }
+
+  &__text {
+    padding-bottom: 0;
+  }
+  &__title {
+    font-family: Jost;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 12px;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+
+  &__topic {
+    line-height: 18px;
+    max-width: 216px;
+    min-height: 51px;
+  }
+
+  &__horizontalLine {
+    background: #d8d8d8;
+    opacity: 0.1;
+    height: 1px;
+    width: 100%;
+  }
+
+  &__action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__date {
+    font-family: Jost;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 10px;
+    color: #ffffff;
+  }
+
+  &__link {
+    padding: 6px 21px;
+    transition: box-shadow 0.2s;
+
+    &:hover {
+      box-shadow: 0px 0px 10px 5px rgba(107, 105, 249, 0.62);
+      color: #fff;
+    }
   }
 }

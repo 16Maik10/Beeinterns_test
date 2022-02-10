@@ -1,5 +1,5 @@
 body {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.0001) 0%, rgba(255, 255, 255, 0.1) 100%), #2b2c3a;
+  background-color: #2b2c3a;
 }
 
 button {
@@ -31,7 +31,7 @@ button {
   color: inherit;
 }
 
-.grayLink14 {
+.grayCustomText {
   font-family: Jost;
   font-style: normal;
   font-weight: normal;
@@ -39,13 +39,42 @@ button {
   line-height: 10px;
   color: #fff;
   opacity: 0.5;
-  -webkit-transition: opacity 0.2s;
-  transition: opacity 0.2s;
 }
 
-.grayLink14:hover {
-  opacity: 1;
+.purpleButton {
+  font-family: Jost;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 17px;
   color: #fff;
+  background: -webkit-gradient(linear, left top, right top, from(#6b69f9), to(#6f6eff));
+  background: linear-gradient(90deg, #6b69f9 0%, #6f6eff 100%);
+  border-radius: 4px;
+}
+
+.sliderMove {
+  padding: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+  margin-left: 5px;
+  background-color: unset;
+  background-image: url(../img/lessons/left_arrow.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-transition: -webkit-box-shadow 0.2s;
+  transition: -webkit-box-shadow 0.2s;
+  transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s, -webkit-box-shadow 0.2s;
+}
+
+.sliderMove:hover {
+  -webkit-box-shadow: 0px 0px 5px 1px rgba(255, 255, 255, 0.62);
+          box-shadow: 0px 0px 5px 1px rgba(255, 255, 255, 0.62);
+}
+
+.sliderMove:last-of-type {
+  background-image: url(../img/lessons/right_arrow.svg);
 }
 
 .wrapper {
@@ -55,11 +84,7 @@ button {
 }
 
 .wrapper__element {
-  width: 100%;
-}
-
-main {
-  height: 2000px;
+  width: calc(100vw - 278px);
 }
 
 .leftbar {
@@ -136,6 +161,14 @@ main {
 
 .leftbar__accordion button.accordion-button {
   padding: 10px 30px;
+  -webkit-transition: opacity 0.1s, background-color 0.1s;
+  transition: opacity 0.1s, background-color 0.1s;
+}
+
+.leftbar__accordion button.accordion-button:hover {
+  opacity: 1;
+  color: #fff;
+  background-color: #353747;
 }
 
 .leftbar__accordion button.accordion-button:focus, .leftbar__accordion button.accordion-button:not(.collapsed) {
@@ -158,12 +191,13 @@ main {
   display: block;
   position: relative;
   padding: 15px 90px;
-  -webkit-transition: opacity 0.2s, background-color 0.2s;
-  transition: opacity 0.2s, background-color 0.2s;
+  -webkit-transition: opacity 0.1s, background-color 0.1s;
+  transition: opacity 0.1s, background-color 0.1s;
 }
 
 .lections__link:hover {
   opacity: 1;
+  color: #fff;
   background-color: #353747;
 }
 
@@ -226,11 +260,13 @@ main {
 }
 
 .header {
+  background-color: #2b2c3a;
   border-bottom: 1px solid rgba(216, 216, 216, 0.1);
   padding: 0 45px;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
+  z-index: 5;
 }
 
 .header__nav {
@@ -245,12 +281,19 @@ main {
 }
 
 .header__navItem:last-of-type {
-  border-right: 1px solid rgba(216, 216, 216, 0.6);
+  border-right: 1px solid rgba(216, 216, 216, 0.1);
   padding-right: 28px;
 }
 
 .header__navLink {
   opacity: 0.6;
+  -webkit-transition: opacity 0.1s, color 0.1s;
+  transition: opacity 0.1s, color 0.1s;
+}
+
+.header__navLink:hover {
+  opacity: 1;
+  color: #fff;
 }
 
 .account {
@@ -270,6 +313,10 @@ main {
   border-radius: 5px;
   padding: 7px 10px;
   margin-right: 15px;
+  -webkit-transition: -webkit-box-shadow 0.2s;
+  transition: -webkit-box-shadow 0.2s;
+  transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s, -webkit-box-shadow 0.2s;
 }
 
 .account__progressValue_hours {
@@ -294,6 +341,11 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.account__progressValue:hover {
+  -webkit-box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.4);
+          box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.4);
 }
 
 .buttonGroup {
@@ -326,7 +378,6 @@ main {
   font-weight: 600;
   font-size: 13px;
   line-height: 10px;
-  /* identical to box height, or 77% */
   color: #24cb8d;
 }
 
@@ -375,6 +426,10 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -387,6 +442,12 @@ main {
 
 .form-switch .form-check-label {
   cursor: pointer;
+  -webkit-transition: opacity 0.1s;
+  transition: opacity 0.1s;
+}
+
+.form-switch .form-check-label:hover {
+  opacity: 1;
 }
 
 .form-switch .form-check-input {
@@ -400,16 +461,177 @@ main {
 .form-switch .form-check-input:focus {
   background-image: url(../img/leftbar/checkbox_disabled.svg);
   background-position: 3px;
-  background-size: 16px;
+  background-size: 15px;
   background-color: unset;
   border: 1px solid rgba(255, 255, 255, 0.1);
   -webkit-box-shadow: unset;
           box-shadow: unset;
 }
 
+.form-switch .form-check-input:checked,
+.form-switch .form-check-input:hover {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.form-switch .form-check-input:hover + .form-check-label {
+  opacity: 1;
+}
+
 .form-switch .form-check-input:checked {
   background-position: 21px;
   background-image: url(../img/leftbar/checkbox.svg);
-  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.course {
+  padding: 3% 4% 0;
+}
+
+.course__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.course__desc {
+  font-family: Jost;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 18px;
+  color: #fff;
+}
+
+.course__desc_lvl {
+  font-family: Jost;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 16px;
+  text-transform: uppercase;
+  color: #fff;
+  opacity: 0.4;
+  margin-bottom: 7px;
+}
+
+.course__navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.course__lections {
+  padding: 7px 12px;
+  margin-right: 5px;
+  -webkit-transition: -webkit-box-shadow 0.2s;
+  transition: -webkit-box-shadow 0.2s;
+  transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s, -webkit-box-shadow 0.2s;
+}
+
+.course__lections:hover {
+  -webkit-box-shadow: 0px 0px 10px 5px rgba(107, 105, 249, 0.62);
+          box-shadow: 0px 0px 10px 5px rgba(107, 105, 249, 0.62);
+  color: #fff;
+}
+
+.courseContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.lectionCard {
+  background-color: rgba(255, 255, 255, 0.04);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 6px;
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.lectionCard__type {
+  padding: 5px;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+
+.lectionCard__desc {
+  padding: 15px;
+}
+
+.lectionCard__text {
+  padding-bottom: 0;
+}
+
+.lectionCard__title {
+  font-family: Jost;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 12px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.lectionCard__topic {
+  line-height: 18px;
+  max-width: 216px;
+  min-height: 51px;
+}
+
+.lectionCard__horizontalLine {
+  background: #d8d8d8;
+  opacity: 0.1;
+  height: 1px;
+  width: 100%;
+}
+
+.lectionCard__action {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.lectionCard__date {
+  font-family: Jost;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 10px;
+  color: #ffffff;
+}
+
+.lectionCard__link {
+  padding: 6px 21px;
+  -webkit-transition: -webkit-box-shadow 0.2s;
+  transition: -webkit-box-shadow 0.2s;
+  transition: box-shadow 0.2s;
+  transition: box-shadow 0.2s, -webkit-box-shadow 0.2s;
+}
+
+.lectionCard__link:hover {
+  -webkit-box-shadow: 0px 0px 10px 5px rgba(107, 105, 249, 0.62);
+          box-shadow: 0px 0px 10px 5px rgba(107, 105, 249, 0.62);
+  color: #fff;
 }
 /*# sourceMappingURL=style.css.map */
