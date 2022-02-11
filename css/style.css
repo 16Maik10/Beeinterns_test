@@ -160,6 +160,10 @@ button {
   background-size: unset;
 }
 
+.leftbar_forAdaptive {
+  display: none;
+}
+
 .lections__item {
   display: block;
 }
@@ -454,6 +458,7 @@ button {
 }
 
 .course__desc {
+  display: block;
   font: 22px/18px Jost;
   font-family: Jost;
   font-size: 22px;
@@ -693,6 +698,13 @@ button {
   }
   .header__navItem:last-of-type {
     padding-right: 0;
+  }
+  .leftbar__accordion {
+    padding: 0;
+    border-top: none;
+  }
+  .form-check.form-switch {
+    margin: 10px 0;
   }
   .courseContent {
     -webkit-box-orient: vertical;
