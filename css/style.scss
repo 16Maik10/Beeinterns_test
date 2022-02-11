@@ -19,27 +19,15 @@ button {
 
 .myLink {
   text-decoration: none;
-
-  &:hover {
-    color: inherit;
-  }
 }
 
 .grayCustomText {
-  font-family: Jost;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 10px;
+  font: 14px/10px Jost;
   color: #fff;
   opacity: 0.5;
 }
 .purpleButton {
-  font-family: Jost;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 17px;
+  font: 12px/17px Jost;
   color: #fff;
   background: linear-gradient(90deg, #6b69f9 0%, #6f6eff 100%);
   border-radius: 4px;
@@ -85,10 +73,7 @@ button {
     margin: 30px 110px 14px 30px;
 
     & > h3 {
-      font-family: Jost;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 22.1818px;
+      font: bold 22.1818px/1 Jost;
       color: #fff;
     }
   }
@@ -96,11 +81,7 @@ button {
   &__miniLogos {
     display: flex;
     justify-content: space-between;
-    font-family: Jost;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 10.7331px;
-    line-height: 16px;
+    font: 500 10.7331px/16px Jost;
     color: #fff;
   }
 
@@ -117,11 +98,7 @@ button {
     button.accordion-button {
       background: unset;
       border-radius: 0;
-      font-family: Jost;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 14px;
-      line-height: 20px;
+      font: 14px/20px Jost;
       letter-spacing: 1px;
       text-transform: uppercase;
       color: #fff;
@@ -223,6 +200,9 @@ button {
   }
 }
 
+.burgerMenu {
+  display: none;
+}
 .navMenu {
   background-color: rgba(156, 165, 236, 0.04);
   width: 280px;
@@ -260,12 +240,12 @@ button {
 .account {
   display: flex;
 
+  &__buttonGroup {
+    display: flex;
+    align-items: center;
+  }
   &__progressValue {
-    font-family: Jost;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 13px;
-    line-height: 10px;
+    font: 13px/10px Jost;
     color: #fff;
     background-color: rgba(255, 255, 255, 0.06);
     border-radius: 5px;
@@ -273,11 +253,7 @@ button {
     margin-right: 15px;
     transition: box-shadow 0.2s;
     &_hours {
-      font-family: Jost;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 11px;
-      line-height: 10px;
+      font: 11px/10px Jost;
       opacity: 0.6;
       margin-left: 4px;
     }
@@ -294,56 +270,36 @@ button {
       box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.4);
     }
   }
-}
-
-.buttonGroup {
-  display: flex;
-  align-items: center;
-}
-.accountInfo {
-  display: flex;
-  padding: 14px 0;
-
-  &__online {
-    padding: 8px 15px;
-  }
-
-  &__status {
+  &Info {
     display: flex;
-    margin: 9px 5px;
-    font-family: Jost;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 13px;
-    line-height: 10px;
-    color: #24cb8d;
+    padding: 14px 0;
 
-    & > img {
-      margin-right: 5px;
+    &__online {
+      padding: 8px 15px;
     }
-  }
 
-  &__name {
-    font-family: Jost;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 10px;
-    color: #fff;
-  }
+    &__status {
+      display: flex;
+      margin: 9px 5px;
+      font: 600 13px/10px Jost;
+      color: #24cb8d;
 
-  &__level {
-    background: linear-gradient(90deg, #6b69f9 0%, #6f6eff 100%);
-    border-radius: 4px;
-    align-self: start;
-    margin-top: 8px;
-    font-family: Jost;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 11px;
-    line-height: 10px;
-    color: #fff;
-    padding: 2px 11px 2px 8px;
+      & > img {
+        margin-right: 5px;
+      }
+    }
+
+    &__name {
+      font: 14px/10px Jost;
+      color: #fff;
+    }
+
+    &__level {
+      align-self: start;
+      margin-top: 8px;
+      font: 11px/10px Jost;
+      padding: 2px 11px 2px 8px;
+    }
   }
 }
 
@@ -382,7 +338,7 @@ button {
   & .form-check-input:focus {
     background-image: url(../img/leftbar/checkbox_disabled.svg);
     background-position: 3px;
-    background-size: 15px;
+    background-size: 14px;
     background-color: unset;
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: unset;
@@ -398,7 +354,7 @@ button {
   }
 
   & .form-check-input:checked {
-    background-position: 21px;
+    background-position: 22px;
     background-image: url(../img/leftbar/checkbox.svg);
   }
 }
@@ -412,18 +368,13 @@ button {
     margin-bottom: 25px;
   }
   &__desc {
+    font: 22px/18px Jost;
     font-family: Jost;
-    font-style: normal;
-    font-weight: normal;
     font-size: 22px;
     line-height: 18px;
     color: #fff;
     &_lvl {
-      font-family: Jost;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 11px;
-      line-height: 16px;
+      font: 11px/16px Jost;
       text-transform: uppercase;
       color: #fff;
       opacity: 0.4;
@@ -472,11 +423,7 @@ button {
     padding-bottom: 0;
   }
   &__title {
-    font-family: Jost;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 12px;
+    font: 16px/12px Jost;
     color: #fff;
     margin-bottom: 10px;
   }
@@ -501,12 +448,8 @@ button {
   }
 
   &__date {
-    font-family: Jost;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 13px;
-    line-height: 10px;
-    color: #ffffff;
+    font: 13px/10px Jost;
+    color: #fff;
   }
 
   &__link {
@@ -516,6 +459,124 @@ button {
     &:hover {
       box-shadow: 0px 0px 10px 5px rgba(107, 105, 249, 0.62);
       color: #fff;
+    }
+  }
+}
+
+.invisible {
+  display: none;
+}
+@media screen and (max-width: 1139px) {
+  .header {
+    &__nav {
+      flex-direction: column;
+      width: fit-content;
+
+      &Item {
+        margin: 5px 0;
+        &:last-of-type {
+          border-right: none;
+        }
+      }
+    }
+  }
+
+  .account {
+    position: relative;
+
+    &__buttonGroup {
+      position: absolute;
+      top: 85%;
+      right: 13%;
+      background-color: #2b2c3a;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      border-radius: 7px;
+      flex-direction: column;
+      padding: 30px 10px 10px;
+      min-height: 130px;
+      justify-content: space-between;
+      transition: right 0.5s;
+    }
+    &__progressValue {
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    &Info__level {
+      position: absolute;
+      top: 85%;
+      right: 39%;
+      transition: right 0.5s;
+    }
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .wrapper__element {
+    width: 100%;
+  }
+
+  .burgerMenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 25px;
+    &__text {
+      text-transform: uppercase;
+      font-size: 18px;
+    }
+  }
+  .leftbar {
+    display: none;
+  }
+  .course {
+    &__header {
+      flex-direction: column;
+    }
+
+    &__navigation {
+      justify-content: space-between;
+      margin-top: 30px;
+    }
+  }
+  .showMenu {
+    display: block;
+    position: absolute;
+    z-index: 7;
+    background-color: #2b2c3a;
+    top: 83px;
+    left: 0;
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    height: unset;
+    border-top: none;
+    width: 278px;
+  }
+
+  .form-check.form-switch {
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 585px) {
+  .header {
+    padding: 0 0 0 2%;
+
+    &__navItem:last-of-type {
+      padding-right: 0;
+    }
+  }
+  .course {
+    &Content {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__desc {
+      text-align: center;
+    }
+
+    &__navigation {
+      justify-content: center;
     }
   }
 }
