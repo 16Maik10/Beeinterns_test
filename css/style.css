@@ -584,8 +584,10 @@ button {
   color: #fff;
 }
 
-.invisible {
-  display: none;
+.visible {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
 }
 
 @media screen and (max-width: 1139px) {
@@ -608,6 +610,7 @@ button {
     position: relative;
   }
   .account__buttonGroup {
+    display: none;
     position: absolute;
     top: 85%;
     right: 13%;
@@ -631,6 +634,7 @@ button {
     margin: 0 auto;
   }
   .accountInfo__level {
+    display: none;
     position: absolute;
     top: 85%;
     right: 39%;

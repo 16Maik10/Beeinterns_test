@@ -468,8 +468,8 @@ button {
   }
 }
 
-.invisible {
-  display: none;
+.visible {
+  display: flex !important;
 }
 @media screen and (max-width: 1139px) {
   .header {
@@ -490,6 +490,7 @@ button {
     position: relative;
 
     &__buttonGroup {
+      display: none;
       position: absolute;
       top: 85%;
       right: 13%;
@@ -508,6 +509,7 @@ button {
     }
 
     &Info__level {
+      display: none;
       position: absolute;
       top: 85%;
       right: 39%;
