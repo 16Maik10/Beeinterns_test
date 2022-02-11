@@ -1334,14 +1334,19 @@
       const accLvlEl = document.querySelector("div.accountInfo__level");
       const accBtnGrpEl = document.querySelector("div.account__buttonGroup");
       const leftBarEl = document.querySelector("header nav.leftbar");
-      document.querySelector("div.account").addEventListener("click", () => {
-        if (window.outerWidth > 1139) {
-          return;
-        }
-        [accLvlEl, accBtnGrpEl].forEach((el) => {
-          el.classList.toggle("visible");
+      document
+        .querySelector("div.account")
+        .addEventListener("click", (event) => {
+          if (
+            window.outerWidth > 1139 ||
+            event.target.classList.contains("account__progressValue")
+          ) {
+            return;
+          }
+          [accLvlEl, accBtnGrpEl].forEach((el) => {
+            el.classList.toggle("visible");
+          });
         });
-      });
       document.querySelector(".burgerMenu").addEventListener("click", () => {
         if (window.outerWidth > 850) {
           return;
