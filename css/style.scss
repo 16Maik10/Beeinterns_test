@@ -468,9 +468,6 @@ button {
   }
 }
 
-.visible {
-  display: flex !important;
-}
 @media screen and (max-width: 1139px) {
   .header {
     &__nav {
@@ -594,4 +591,8 @@ button {
       justify-content: center;
     }
   }
+}
+
+.visible {
+  display: flex;
 }
